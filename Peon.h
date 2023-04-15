@@ -1,6 +1,6 @@
 #pragma once
 #include "freeglut.h"
-class Peon
+class Peon : public Pieza
 {
 private:
 	float tamaño;
