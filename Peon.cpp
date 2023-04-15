@@ -14,25 +14,25 @@ void Peon::SetPos(float ix, float iy)
 	y = iy;
 }
 
-void Peon::SetTamaño(float size)
+void Peon::SetTamaÃ±o(float size)
 {
-	tamaño = size;
+	tamaÃ±o = size;
 }
 
 void Peon::dibuja()
 {
 	glColor3ub(rojo, verde, azul);
 	glTranslatef(x, y, 0);
-	glutSolidSphere(tamaño, 20, 20);
+	glutSolidSphere(tamaÃ±o, 20, 20);
 	glTranslatef(-x, -y, 0);
 }
 
 void Peon::Mueve()
 {
-	if (primer_movimineto)
+	if (primer_movimiento)
 	{
 		y += 2;
-		primer_movimineto = false;
+		primer_movimiento = false;
 	}
 	else
 		y += 1;
