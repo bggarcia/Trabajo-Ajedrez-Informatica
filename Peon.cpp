@@ -1,7 +1,7 @@
 #include "Peon.h"
 #include "freeglut.h"
 
-void Peon::setColor(unsigned char r, unsigned char v, unsigned char a)
+void Peon::SetColor(unsigned char r, unsigned char v, unsigned char a)
 {
 	rojo = r;
 	verde = v;
@@ -14,25 +14,25 @@ void Peon::SetPos(float ix, float iy)
 	y = iy;
 }
 
-void Peon::SetTamaÃ±o(float size)
+void Peon::SetTamaño(float size)
 {
-	tamaÃ±o = size;
+	tamaño = size;
 }
 
 void Peon::dibuja()
 {
 	glColor3ub(rojo, verde, azul);
 	glTranslatef(x, y, 0);
-	glutSolidSphere(tamaÃ±o, 20, 20);
+	glutSolidSphere(tamaño, 20, 20);
 	glTranslatef(-x, -y, 0);
 }
 
 void Peon::Mueve()
 {
-	if (primer_movimiento)
+	if (primer_movimineto)
 	{
 		y += 2;
-		primer_movimiento = false;
+		primer_movimineto = false;
 	}
 	else
 		y += 1;

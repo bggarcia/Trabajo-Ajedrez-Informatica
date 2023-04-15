@@ -1,7 +1,7 @@
 #include "Torre.h"
 #include "freeglut.h"
 
-void Torre::setColor(unsigned char r, unsigned char v, unsigned char a)
+void Torre::SetColor(unsigned char r, unsigned char v, unsigned char a)
 {
 	rojo = r;
 	verde = v;

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Alfil.cpp" />
     <ClCompile Include="Caballo.cpp" />
+    <ClCompile Include="Casilla.cpp" />
     <ClCompile Include="Mundo.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="principal.cpp" />
@@ -153,6 +154,7 @@
   <ItemGroup>
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
+    <ClInclude Include="Casilla.h" />
     <ClInclude Include="Mundo.h" />
     <ClInclude Include="Peon.h" />
     <ClInclude Include="Reina.h" />

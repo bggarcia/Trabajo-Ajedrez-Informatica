@@ -1,9 +1,13 @@
 #include "freeglut.h" 
 #include "peon.h"
 #include "torre.h"
+#include "Casilla.h"
+#include "Tablero.h"
 
 Peon peonblanco1;
 Torre torreblanca1;
+Casilla casilla1;
+Tablero tab;
 
 void OnDraw(void); 
 void OnTimer(int value); 
@@ -16,7 +20,7 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv); 
 	glutInitWindowSize(800,600); 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutCreateWindow("MiJuego");
+	glutCreateWindow("Ajedrez");
 	
 	//habilitar luces y definir perspectiva 
 	glEnable(GL_LIGHT0); 
@@ -33,15 +37,25 @@ int main(int argc, char* argv[])
 
 	//inicializaión datos
 
+	//TABLERO
+	tab.SetColor();
+	tab.SetPos();
+	tab.dibuja();
+
 	//PEON BLANCO 1
-	peonblanco1.setColor(255, 255, 255);
-	peonblanco1.SetPos(1, 0);
+	peonblanco1.SetColor(0, 255, 255);
+	peonblanco1.SetPos(0, 0);
 	peonblanco1.SetTamaño(0.5);
 
 	//TORRE BLANCA 1
-	torreblanca1.setColor(255, 255, 255);
-	torreblanca1.SetPos(0, 0);
+	torreblanca1.SetColor(255, 255, 255);
+	torreblanca1.SetPos(1, 0);
 	torreblanca1.SetTamaño(0.5);
+
+	//CASILLA 1
+	//casilla1.SetColor(255, 255, 255);
+	//casilla1.SetPos(0, 0);
+	//casilla1.SetTamaño(1);
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -75,11 +89,16 @@ void OnDraw(void)
 	glEnd();
 	*/
 
+	
+
 	//PEÓN 1
 	peonblanco1.dibuja();
 
 	//TORRE 1
 	torreblanca1.dibuja();
+
+	//CASILLA 1
+	casilla1.dibuja();
 	
 	//Al final, cambiar el buffer (redibujar) 
 	//no borrar esta linea ni poner nada despues

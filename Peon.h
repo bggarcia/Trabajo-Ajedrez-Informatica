@@ -1,20 +1,20 @@
 #pragma once
 #include "freeglut.h"
-class Peon : public Pieza
+class Peon
 {
 private:
-	float tamaÃ±o;
+	float tamaño;
 	float x;
 	float y;
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
-	bool primer_movimiento = true;
+	bool primer_movimineto = true;
 
 public:
-	void setColor(unsigned char r, unsigned char v, unsigned char a);
+	void SetColor(unsigned char r, unsigned char v, unsigned char a);
 	void SetPos(float ix, float iy);
-	void SetTamaÃ±o(float size);
+	void SetTamaño(float size);
 	void dibuja();
 	void Mueve();
 };

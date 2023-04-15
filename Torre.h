@@ -1,9 +1,9 @@
 #pragma once
 #include "freeglut.h"
-class Torre : public Pieza
+class Torre
 {
 private:
-	float tamaÃ±o;
+	float tamaño;
 	float x;
 	float y;
 	unsigned char rojo;
@@ -11,9 +11,9 @@ private:
 	unsigned char azul;
 
 public:
-	void setColor(unsigned char r, unsigned char v, unsigned char a);
+	void SetColor(unsigned char r, unsigned char v, unsigned char a);
 	void SetPos(float ix, float iy);
-	void SetTamaÃ±o(float size);
+	void SetTamaño(float size);
 	void dibuja();
 	void Mueve(int tipo);
 };
