@@ -1,3 +1,5 @@
 class Pieza {
-  
+  unsigned char r;
+  unsigned char g;
+  unsigned char b;
 };
