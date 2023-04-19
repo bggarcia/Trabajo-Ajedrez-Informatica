@@ -1,5 +1,4 @@
 #pragma once
-class Reina
-{
+class Reina : public Pieza {
 };
 
