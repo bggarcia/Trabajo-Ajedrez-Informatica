@@ -5,4 +5,8 @@ class Pieza {
   unsigned char r;
   unsigned char g;
   unsigned char b;
+  
+  public:
+  void dibuja();
+  void mueve();
 };
