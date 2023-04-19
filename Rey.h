@@ -1,5 +1,5 @@
 #pragma once
-class Rey
-{
+class Rey : public Pieza {
+
 };
 
