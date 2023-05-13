@@ -1,0 +1,19 @@
+﻿  CoordinadorPang.cpp
+  Figura.cpp
+  Interaccion.cpp
+  ListaDisparos.cpp
+  ListaEsferas.cpp
+  ListaTableros.cpp
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\ListaTableros.cpp(103,16): warning C4101: 'i_pos': variable local sin referencia
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\ListaTableros.cpp(103,22): warning C4101: 'j_pos': variable local sin referencia
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\ListaTableros.cpp(170,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\ListaTableros.cpp(170,59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\ListaTableros.cpp(170,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\ListaTableros.cpp(170,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Tablero.cpp
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\Tablero.cpp(19,37): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\Tablero.cpp(20,36): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Mundo.cpp
+  Pang.cpp
+  Generando código...
+  Pang.vcxproj -> C:\Users\fanta\Desktop\p2_control (2)\año pasado cuatri2\infor\Trabajo 2023\Ajedrez.Parte4\tema4inicial_VS19x64\bin\Pang.exe
