@@ -86,11 +86,11 @@ void Figura::permitido(int ident) {
 
     // Filas
     for (int i = 0; i < NUM / 2; i++)
-        posicionesLegales[i] = new Tablero((this->getIdent() - (resto-1)) + i,this->getPos1().x + i, this->getPos1().y);
+        posicionesLegales[i] = new Tablero(this->getIdent() - resto + i,this->getPos1().x + i, this->getPos1().y);
 
     //Columnas
      for (int i = 8; i < NUM; i++)
-         posicionesLegales[i] = new Tablero((this->getIdent() - (cociente-1)*10) + 10*(i-8), this->getPos1().x, this->getPos1().y-(i-8));
+         posicionesLegales[i] = new Tablero((this->getIdent() - (cociente*10) + 10*(i-8), this->getPos1().x, this->getPos1().y-(i-8));
     
      for (int i = 0; i < NUM; i++) {
          if (ident == (posicionesLegales[i]->getIdent())) {
