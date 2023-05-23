@@ -21,5 +21,11 @@ public:
 	void SetPos(float x1, float y1, float x2, float y2);
 	void identi(int i,int j);
     	int getIdent();
+	
+	Vector2D getPos();
+    	Vector2D getPos1();
+    	float getPosX();
+    	float getPosY();
+    	//friend class Interaccion; //mas adelante
 };
 
