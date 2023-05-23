@@ -7,7 +7,10 @@
 class Tablero
 {
 private:
-	Casilla casilla[8][8];
+	Vector2D limite1;
+	Vector2D limite2;
+	ColorRGB color;
+	int ident;
 public:
 	Tablero();
 	void dibuja();
