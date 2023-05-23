@@ -11,6 +11,17 @@ Tablero::Tablero(){
     this->pos.y = y1;
 }*/
 
+Tablero::Tablero(float x1,float y1){
+       this->pos.x=x1;
+	this->pos.y=y1;
+
+Tablero::~Tablero()
+{
+	
+}
+	
+	
+	
 void Tablero::SetColor()
 {
 	
@@ -56,17 +67,4 @@ void Tablero::SetPos()
 	}
 }
 
-Tablero::Tablero()
-{
-	int i = 0, j = 0;
-	//casilla[i][j] = new Casilla();
 
-	for (i = 0; i < 8; i++)
-	{
-		for (j = 0; j < 8; j++)
-		{
-			casilla[i][j].inicializa();
-
-		}
-	}
-}
