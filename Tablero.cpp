@@ -1,6 +1,16 @@
 #include "Tablero.h"
 #include "freeglut.h"
 
+Tablero::Tablero(){
+//rojo = verde = azul = 255; //blanco
+}
+
+/*Tablero::Tablero(int identi, float x1, float y1) {
+    ident = identi;
+    this->pos.x =x1;
+    this->pos.y = y1;
+}*/
+
 void Tablero::SetColor()
 {
 	
