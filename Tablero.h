@@ -13,7 +13,9 @@ private:
 	Vector2D pos;
 	int ident;
 public:
-	Tablero();
+	//Tablero(int identi,float x1,float y1);
+	Tablero(float x1,float y1);
+	virtual ~Tablero();
 	void dibuja();
 	void SetColor();
 	void SetPos();
