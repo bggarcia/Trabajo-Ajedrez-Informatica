@@ -43,15 +43,15 @@ void Tablero::SetColor()
 
 void Tablero::dibuja()
 {
-	int i = 0, j = 0;
-	for (i = 0; i < 8; i++)
-	{
-		for (j = 0; j < 8; j++)
-		{
-			casilla[i][j].dibuja();
-
-		}
-	}
+    glDisable(GL_LIGHTING);
+    color.ponColor();
+    glBegin(GL_POLYGON);
+    glVertex3d(limite1.x, limite1.y,0);
+    glVertex3d(limite2.x, limite1.y,0);
+    glVertex3d(limite2.x, limite2.y,0);
+    glVertex3d(limite1.x, limite2.y,0);
+    glEnd();
+    glEnable(GL_LIGHTING);
 }
 
 void Tablero::SetPos()
