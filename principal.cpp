@@ -12,6 +12,7 @@ Tablero tab;
 void OnDraw(void); 
 void OnTimer(int value); 
 void OnKeyboardDown(unsigned char key, int x, int y);
+void MouseButton(int button,int state,int x,int y);
 
 int main(int argc, char* argv[]) 
 { 
@@ -35,7 +36,7 @@ int main(int argc, char* argv[])
 	glutTimerFunc(25,OnTimer,0); 
 	glutKeyboardFunc(OnKeyboardDown);
 
-	//inicializaión datos
+	//inicializaiÃ³n datos
 
 	//TABLERO
 	tab.SetColor();
@@ -45,17 +46,17 @@ int main(int argc, char* argv[])
 	//PEON BLANCO 1
 	peonblanco1.SetColor(0, 255, 255);
 	peonblanco1.SetPos(0, 0);
-	peonblanco1.SetTamaño(0.5);
+	peonblanco1.SetTamaÃ±o(0.5);
 
 	//TORRE BLANCA 1
 	torreblanca1.SetColor(255, 255, 255);
 	torreblanca1.SetPos(1, 0);
-	torreblanca1.SetTamaño(0.5);
+	torreblanca1.SetTamaÃ±o(0.5);
 
 	//CASILLA 1
 	//casilla1.SetColor(255, 255, 255);
 	//casilla1.SetPos(0, 0);
-	//casilla1.SetTamaño(1);
+	//casilla1.SetTamaÃ±o(1);
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
@@ -91,7 +92,7 @@ void OnDraw(void)
 
 	
 
-	//PEÓN 1
+	//PEÃ“N 1
 	peonblanco1.dibuja();
 
 	//TORRE 1
@@ -114,7 +115,7 @@ void OnTimer(int value)
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t) 
 {
-	//poner aqui el código de teclado
+	//poner aqui el cÃ³digo de teclado
 
 	if (key == 'a')
 	{
@@ -144,4 +145,9 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 	}
 
 	glutPostRedisplay();
+}
+
+void MouseButton(int button,int state,int x,int y)
+{
+	
 }
