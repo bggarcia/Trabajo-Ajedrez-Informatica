@@ -25,8 +25,10 @@ void Mundo::dibuja()
   cb1.dibuja();
   cb2.dibuja();
   //alfiles
-  
-  
-  
-  
+  ab1.dibuja();
+  ab2.dibuja();
+  //reina
+  qb.dibuja();
+  //rey
+  kb.dibuja();
  }
