@@ -149,5 +149,9 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void MouseButton(int button,int state,int x,int y)
 {
-	
+	if (button==down)
+	{
+		
+	}
+	glutPostRedisplay();
 }
