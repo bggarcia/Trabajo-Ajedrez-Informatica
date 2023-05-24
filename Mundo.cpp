@@ -8,7 +8,24 @@ void Mundo::dibuja()
             0.0, y_ojo, 0.0,
             0.0, 1.0, 0.0);
   
-  lt.dibuja();
+  lt.dibuja(); //dibuja el tablero
+  //Peones blancos
+  p1b.dibuja();
+  p2b.dibuja();
+  p3b.dibuja();
+  p4b.dibuja();
+  p5b.dibuja();
+  p6b.dibuja();
+  p7b.dibuja();
+  p8b.dibuja();
+  //torres
+  t1b.dibuja();
+  t2b.dibuja();
+  //caballos
+  cb1.dibuja();
+  cb2.dibuja();
+  //alfiles
+  
   
   
   
