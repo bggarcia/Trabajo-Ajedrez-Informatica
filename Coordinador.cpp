@@ -13,15 +13,44 @@ void Coordinador::dibuja()
 {
     if (estado == INICIO) 
     {
-       
+        gluLookAt(0, 7.5, 30, // posicion del ojo
+            0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+            0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/fondo.png").id);
+        glDisable(GL_LIGHTING);
+        glBegin(GL_POLYGON);
+        glColor3f(1, 1, 1);
+        glTexCoord2d(0, 1); glVertex3f(-14.5, -3.4, -0.1);
+        glTexCoord2d(1, 1); glVertex3f(14.5, -3.4, -0.1);
+        glTexCoord2d(1, 0); glVertex3f(14.5, 18.5, -0.1);
+        glTexCoord2d(0, 0); glVertex3f(-14.5, 18.5, -0.1);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        glDisable(GL_TEXTURE_2D);
+        ETSIDI::setTextColor(1, 1, 0);
+        ETSIDI::setFont("bin/fuentes/Classica-Book.ttf", 36);
+        ETSIDI::printxy("CHECKMATE", -13, 15);
+        ETSIDI::setTextColor(1, 1, 0);
+        ETSIDI::setFont("bin/fuentes/Classica-Book.ttf", 12);
+        ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", 1, 16);
+        ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", 1, 15);
+        ETSIDI::setFont("bin/fuentes/Classica-BoldOblique.ttf", 8);
+        ETSIDI::printxy("Roberto Vázquez, Alejandro Mayor, Borja García, Joaquin Huirse", -13, -3);
+  
     }
     else if (estado == JUEGO)
     {
-      
+      mundo.dibuja();
+        aux = true;
     }
     else if (estado == GAMEOVER)
     {
-  
+         mundo.dibuja();
+        ETSIDI::setTextColor(1, 0, 0);
+        ETSIDI::setFont("bin/fuentes/Bitwise.ttf", 16);
+        ETSIDI::printxy("GAMEOVER: Has perdido", -5, 10);
+        ETSIDI::printxy("Pulsa -C- para continuar", -5, 5);
     }
     else if (estado == FIN)
     {
