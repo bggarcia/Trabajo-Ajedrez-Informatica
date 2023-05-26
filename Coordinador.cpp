@@ -56,11 +56,14 @@ void Coordinador::tecla(unsigned char key)
 
 void Coordinador::teclaESpecial(unsigned char key)
 {
-  
+  if (estado == JUEGO)
+        mundo.teclaEspecial(key);
 }
 
 void Coordinador::mueve()
 {
-    
-
+     if (estado == JUEGO && aux==true)
+    {
+        mundo.mueve();
+    }
 }
