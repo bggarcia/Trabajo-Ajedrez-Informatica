@@ -42,7 +42,9 @@ void Coordinador::tecla(unsigned char key)
   }
   else if (estado==FIN)
   {
-    
+     ETSIDI::stopMusica();
+        if (key == 'c')
+            estado = INICIO;
   }
   else if (estado==PAUSE)
     if (key=='c')
