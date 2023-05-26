@@ -1,6 +1,13 @@
 #include "Coordinador.h"
 #include "ETSIDI.h"
 
+Coordinador::Coordinador()
+{
+}
+Coordinador::~Coordinador()
+{
+}
+
 void Coordinador::tecla(unsigned char key)
 {
   if (estado==INICIO)
