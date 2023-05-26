@@ -1,6 +1,8 @@
 #pragma once
-#include "freeglut.h"
-class Peon : public Pieza {
+#include "Figura.h"
+#include <iostream>
+#include <string>
+class Peon : public Figura {
 	float tamaño;
 	float x;
 	float y;
