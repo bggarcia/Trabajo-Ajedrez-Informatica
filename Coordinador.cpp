@@ -9,7 +9,31 @@ Coordinador::Coordinador()
 Coordinador::~Coordinador()
 {
 }
+void Coordinador::dibuja()
+{
+    if (estado == INICIO) 
+    {
+       
+    }
+    else if (estado == JUEGO)
+    {
+      
+    }
+    else if (estado == GAMEOVER)
+    {
+  
+    }
+    else if (estado == FIN)
+    {
+     
+    }
+    else if (estado == PAUSE)
+    {
+        
 
+    }
+
+}
 void Coordinador::tecla(unsigned char key)
 {
   if (estado==INICIO)
