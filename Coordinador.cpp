@@ -49,7 +49,8 @@ void Coordinador::tecla(unsigned char key)
   else if (estado==PAUSE)
     if (key=='c')
     {
-      
+      estado = JUEGO;
+            ETSIDI::play("bin/sonidos/Continue.mp3");
     }
 }
 
