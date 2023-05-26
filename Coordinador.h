@@ -6,6 +6,11 @@ class Coordinador
   public: 
     	Coordinador();
 	virtual ~Coordinador();
+	void teclaEspecial(unsigned char key);
+	void tecla(unsigned char key);
+	void mueve();
+	void dibuja();
+	void setRaton(Vector2D pos);
   protected: 
     	Mundo mundo;
    	enum Estado { INICIO, JUEGO, GAMEOVER, FIN, PAUSE };
