@@ -19,4 +19,9 @@ public:
     Vector2D getMax();
     bool getCasilla(int ident);
     void setIndent();
+    bool piezasEnMedio(Figura *ListaFiguras, int cont, int origen, int destino);
+    bool getCasillaOcupada(int destino,int cont);
+    int compPiezaMismoColor(Figura* ListaFiguras, int i_, int origen, int destino, int cont);
+    friend class Interaccion;
+    friend class Figura;
 };
