@@ -33,7 +33,12 @@ void Coordinador::tecla(unsigned char key)
   }
   else if(estado==GAMEOVER)
   {
-    
+      //ETSIDI::stopMusica();
+        if (key == 'c')
+        {
+            estado = INICIO; 
+       
+        }
   }
   else if (estado==FIN)
   {
