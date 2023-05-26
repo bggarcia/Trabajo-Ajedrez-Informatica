@@ -7,19 +7,15 @@ Figura::Figura() {
     //altura = 0.1f;
 }
 
+Figura::Figura(bool color_, const std::string& tipo_) {
+	color = color_;
+	tipo = tipo_;
+}
+
 Figura::~Figura()
 {
 
 }
-//void Figura::dibuja()
-//{
-//    glPushMatrix();
-//    glTranslatef(posicion.x, posicion.y, 0);
-//    glColor3f(1.0f, 0.0f, 0.0f);
-//    glutSolidSphere(altura, 20, 20);
-//    glPopMatrix();
-//}
-
 
 Vector2D Figura::getPos()
 {
@@ -35,6 +31,12 @@ void Figura::setPos(Vector2D pos)
 {
 	posicion = pos;
 }
+
+void Figura::setPos(int ident) {
+	posicion.x = ident / 10;
+	posicion.y = ident % 10;
+}
+
 void Figura::setIdent(int identi) {
 	ident = identi;
 }
