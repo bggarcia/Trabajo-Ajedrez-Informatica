@@ -54,11 +54,25 @@ void Coordinador::dibuja()
     }
     else if (estado == FIN)
     {
-     
+      mundo.dibuja();
+        ETSIDI::setFont("bin/fuentes/Bitwise.ttf", 16);
+        ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -5, 10);
+        ETSIDI::printxy("Pulsa -C- para continuar", -5, 9);
     }
     else if (estado == PAUSE)
     {
-        
+        gluLookAt(0, 7.5, 30,  // posicion del ojo   
+            0.0, 7.5, 0.0,      // hacia que punto mira  (0,7.5,0)   
+            0.0, 1.0, 0.0); // definimos hacia arriba (eje Y) 
+           //Colocamos una foto
+
+
+
+        ETSIDI::setTextColor(1, 1, 1);
+        ETSIDI::setFont("bin/fuentes/Bitwise.ttf", 32);
+        ETSIDI::printxy("PAUSE", -8, 15);
+        ETSIDI::setFont("bin/fuentes/Bitwise.ttf", 16);
+        ETSIDI::printxy("PRESS '-C-' TO CONTINUE ", -11, 8);
 
     }
 
