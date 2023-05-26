@@ -3,6 +3,8 @@
 
 Coordinador::Coordinador()
 {
+  estado = INICIO;
+    aux = false;
 }
 Coordinador::~Coordinador()
 {
