@@ -1,5 +1,8 @@
 #include "Torre.h"
-#include "freeglut.h"
+
+Torre::Torre() {
+	lado = 0.1f;
+}
 
 void Torre::SetColor(unsigned char r, unsigned char v, unsigned char a)
 {
@@ -14,16 +17,16 @@ void Torre::SetPos(float ix, float iy)
 	y = iy;
 }
 
-void Torre::SetTamaño(float size)
+void Torre::SetTamaÃ±o(float size)
 {
-	tamaño = size;
+	tamaÃ±o = size;
 }
 
 void Torre::dibuja()
 {
 	glColor3ub(rojo, verde, azul);
 	glTranslatef(x, y, 0);
-	glutSolidCube(tamaño);
+	glutSolidCube(tamaÃ±o);
 	glTranslatef(-x, -y, 0);
 }
 
