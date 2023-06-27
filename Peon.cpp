@@ -102,3 +102,12 @@ bool Peon::movLineal(Vector2D inicial, Vector2D final)
 	else
 		return false;
 }
+
+bool Peon::coronacion(int ident_)
+{
+
+
+
+
+	return false;
+}
