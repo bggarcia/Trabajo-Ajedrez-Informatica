@@ -39,13 +39,3 @@ std::string Peon::getName() {
 	return tipo;
 }
 
-void Peon::Mueve()
-{
-	if (primer_movimineto)
-	{
-		y += 2;
-		primer_movimineto = false;
-	}
-	else
-		y += 1;
-}
