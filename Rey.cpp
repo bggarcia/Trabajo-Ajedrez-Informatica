@@ -32,3 +32,18 @@ void Rey::dibuja() {
 std::string Rey::getName() {
     return tipo;
 }
+bool Rey::movLegal(int ident_) {
+    Vector2D pos, pos_ini, dif, dif_aux;
+
+    pos_ini = this->getPos();
+    int aux_x, aux_y;
+    aux_x = ident_ / 10;
+    aux_y = ident_ % 10;
+    pos = { (float)aux_x,(float)aux_y };
+    dif = pos - pos_ini;
+    dif_aux = dif.absoluto(pos, pos_ini);
+
+    if (dif_aux.x > 1.0 || dif_aux.y > 1.0) //movimientos correctos
+        return false;
+    return true;
+}
