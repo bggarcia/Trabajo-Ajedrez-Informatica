@@ -4,30 +4,28 @@ Torre::Torre() {
 	lado = 0.1f;
 }
 
-void Torre::SetColor(unsigned char r, unsigned char v, unsigned char a)
-{
-	rojo = r;
-	verde = v;
-	azul = a;
-}
-
-void Torre::SetPos(float ix, float iy)
-{
-	x = ix;
-	y = iy;
-}
-
-void Torre::SetTamaño(float size)
-{
-	tamaño = size;
-}
-
 void Torre::dibuja()
 {
-	glColor3ub(rojo, verde, azul);
-	glTranslatef(x, y, 0);
-	glutSolidCube(tamaño);
-	glTranslatef(-x, -y, 0);
+    if (color == 1) {
+        
+        sprite1.setCenter(0.0f, 0.0f);
+        sprite1.setSize(0.8f, 0.8f);
+        glPushMatrix();
+        glTranslatef(posicion.x - 0.25f, posicion.y - 0.25f, 0.2f);
+        glColor3f(1.0f, 0.0f, 0.0f);
+        sprite1.setState(1);
+        sprite1.draw();
+        glPopMatrix();
+    }
+    else {
+        sprite2.setCenter(0.0f, 0.0f);
+        sprite2.setSize(0.8f, 0.8f);
+        glPushMatrix();
+        glTranslatef(posicion.x - 0.25f, posicion.y - 0.25f, 0.2f);
+        glColor3f(1.0f, 0.0f, 0.0f);
+        sprite2.setState(1);
+        sprite2.draw();
+        glPopMatrix();
 }
 
 void Torre::Mueve(int tipo)
