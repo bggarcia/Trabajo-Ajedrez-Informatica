@@ -19,9 +19,6 @@ public:
 		tipo="p";
 	}
         Peon();
-        void SetPos(float ix, float iy);
-	void SetTamaño(float size);
 	void dibuja();
-	void Mueve();
 };
 
