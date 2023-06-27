@@ -14,5 +14,8 @@ public:
 		
 	}
 	Rey();
+	void dibuja();
+	bool movLegal(int ident_);
+	std::string getName();
 };
 
