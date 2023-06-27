@@ -17,7 +17,8 @@ protected:
     SpriteSequence sprite2{ "bin/imagenes/piezas_negras.png", 6 };
 public:
     Figura();
-    Figura(bool color_, const std::string& tipo_);
+    Figura(bool color_, const string &tipo_,int identidad_,bool vida_);
+    Figura(bool color_,int identidad_);
     virtual ~Figura();
     virtual void dibuja()=0;
     virtual bool movLegal (int ident_)=0;
