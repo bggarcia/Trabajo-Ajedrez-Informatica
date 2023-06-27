@@ -6,30 +6,33 @@ Peon:: Peon()
 	altura=0.1f;
 	primerMov=false;
 }
-void Peon::SetColor(unsigned char r, unsigned char v, unsigned char a)
-{
-	rojo = r;
-	verde = v;
-	azul = a;
-}
 
-void Peon::SetPos(float ix, float iy)
-{
-	x = ix;
-	y = iy;
-}
-
-void Peon::SetTamaño(float size)
-{
-	tamaño = size;
-}
 
 void Peon::dibuja()
 {
-	glColor3ub(rojo, verde, azul);
-	glTranslatef(x, y, 0);
-	glutSolidSphere(tamaño, 20, 20);
-	glTranslatef(-x, -y, 0);
+	if (color == 1) {
+		sprite1.setCenter(0, 0);
+		sprite1.setSize(0.8, 0.8);
+		glPushMatrix();
+		glTranslatef(posicion.x-0.25f, posicion.y-0.25f, 0.2);
+		glColor3f(1.0f, 0.0f, 0.0f);
+		sprite1.setState(0);
+		sprite1.draw();
+
+		glPopMatrix();
+	}
+	else {
+		sprite2.setCenter(0, 0);
+		sprite2.setSize(0.8, 0.8);
+		glPushMatrix();
+		glTranslatef(posicion.x - 0.25f, posicion.y - 0.25f, 0.2);
+		glColor3f(1.0f, 0.0f, 0.0f);
+		sprite2.setState(0);
+		sprite2.draw();
+		glTranslatef(-posicion.x + 0.25f, -posicion.y + 0.25f, -0.2f);
+
+		glPopMatrix();
+	}
 }
 
 void Peon::Mueve()
