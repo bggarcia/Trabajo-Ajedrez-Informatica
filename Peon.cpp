@@ -70,3 +70,19 @@ bool Peon::movLegal(int ident_) {
 	return flag;
 
 }
+
+bool Peon::movDiagonal(Vector2D inicial,Vector2D final)
+{
+	int cont = 0;
+
+	if (this->color)//si es blanca
+		cont = 1;
+	else
+		cont = -1;//negra
+	
+	
+	if ((final.y - inicial.y) == cont && abs(final.x - inicial.x) == 1)
+		return true;
+	else
+		return false;
+}
