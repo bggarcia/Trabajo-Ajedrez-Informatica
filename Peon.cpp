@@ -39,3 +39,34 @@ std::string Peon::getName() {
 	return tipo;
 }
 
+bool Peon::movLegal(int ident_) {
+	Vector2D pos, pos_ini, dif,dif_aux;
+	//Vector2D cont = {0,0};
+	bool flag = true;
+	bool aux=true;
+	pos_ini = this->getPos();
+	int aux_x, aux_y;
+	aux_x = ident_ / 10;
+	aux_y = ident_ % 10;
+	pos = { (float)aux_x,(float)aux_y };
+
+
+	dif_aux=dif.absoluto(pos,pos_ini); 
+
+	
+
+	if (dif_aux.y>2 || dif_aux.x>1)
+	{
+		return false;
+	}
+
+	
+	
+	if (movLineal(pos_ini, pos) || movDiagonal(pos_ini, pos)) //Tiene que conocer el tablero
+		flag = true;
+	else
+		flag = false;
+
+	return flag;
+
+}
