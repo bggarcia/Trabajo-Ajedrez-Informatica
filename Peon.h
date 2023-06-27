@@ -6,11 +6,20 @@
 class Peon : public Figura {
 private:
         float altura;
-	bool primer_movimineto = true;
+	bool primerMov
 
 public:
-	void SetColor(unsigned char r, unsigned char v, unsigned char a);
-	void SetPos(float ix, float iy);
+	Peon(bool color_,const std::string &tipo_,int identidad_,bool vida_):Figura(color_,tipo_,identidad_,vida_){
+		altura=0.1f;
+		primerMov=true;
+	}
+	Peon(bool color_,int identidad_):Figura(color_,identidad_){
+		altrua=0.1f;
+		primerMov=true;
+		tipo="p";
+	}
+        Peon();
+        void SetPos(float ix, float iy);
 	void SetTamaño(float size);
 	void dibuja();
 	void Mueve();
