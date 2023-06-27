@@ -2,19 +2,29 @@
 
 #include "freeglut.h"
 #include <iostream>
+#include<string>
+
 Figura::Figura() {
-   
-    //altura = 0.1f;
+   max.x=8.0;
+   max.y=8.0;
+   min.x=1.0;
+   min.y=1.0;
 }
 
-Figura::Figura(bool color_, const std::string& tipo_) {
+Figura::Figura(bool color_, const std::string& tipo_,int identidad,bool vida_) {
 	color = color_;
 	tipo = tipo_;
+	identidad=identidad_;
+}
+
+Figura::Figura(bool color_,int identidad_)
+{
+	color=color_;
+	identidad=identidad_;
 }
 
 Figura::~Figura()
 {
-
 }
 
 Vector2D Figura::getPos()
