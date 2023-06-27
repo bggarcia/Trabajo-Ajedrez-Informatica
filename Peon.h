@@ -23,5 +23,7 @@ public:
         bool movLegal(int ident_);
 	std::string getName();
 	bool movDiagonal(Vector2D,Vector2D);
+        bool movLineal(Vector2D, Vector2D);
+	bool coronacion(int ident_);
 };
 
