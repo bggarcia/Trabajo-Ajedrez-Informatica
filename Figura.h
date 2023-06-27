@@ -22,7 +22,7 @@ public:
     virtual ~Figura();
     virtual void dibuja()=0;
     virtual bool movLegal (int ident_)=0;
-    virtual std::string getName()=0;
+    virtual string getName()=0;
 
     Vector2D getPos();
     void setPos(float x, float y);
@@ -31,8 +31,9 @@ public:
     //
     void setIdent(int identi);
     int getIdent();
+    bool getColor(){return color;}
 
     
-    friend class Lista Tableros;
     friend class Tablero;
+    friend class Casilla;
 };
