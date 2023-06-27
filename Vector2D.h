@@ -16,5 +16,11 @@ public:
   Vector2D& operator += (Vector2D&);
   bool operator != (Vector2D&);
   bool operator == (Vector2D&);
+  Vector2D absoluto(Vector2D aux,Vector2D aux2) {
+        Vector2D res;
+        res.x = abs(aux.x-aux2.x);
+        res.y = abs(aux.y-aux2.y);
+        return res;
+    }
 };
 
