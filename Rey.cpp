@@ -28,3 +28,7 @@ void Rey::dibuja() {
 
     }
 }
+
+std::string Rey::getName() {
+    return tipo;
+}
