@@ -86,3 +86,19 @@ bool Peon::movDiagonal(Vector2D inicial,Vector2D final)
 	else
 		return false;
 }
+
+bool Peon::movLineal(Vector2D inicial, Vector2D final)
+{
+	int cont = 0;
+	if (this->color)//si es blanca
+		cont = 1;
+	else                //negra
+		cont = -1;
+
+	if (primerMov && (final.y - inicial.y == cont * 2) && (final.x - inicial.x == 0))
+		return true;
+	if ((final.y - inicial.y == cont) && (final.x - inicial.x == 0))
+		return true;
+	else
+		return false;
+}
