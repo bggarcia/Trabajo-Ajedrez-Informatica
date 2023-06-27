@@ -2,13 +2,10 @@
 #include "Figura.h"
 #include <iostream>
 #include <string>
+
 class Peon : public Figura {
-	float tamaño;
-	float x;
-	float y;
-	unsigned char rojo;
-	unsigned char verde;
-	unsigned char azul;
+private:
+        float altura;
 	bool primer_movimineto = true;
 
 public:
