@@ -7,13 +7,7 @@ Caballo::Caballo(){
 }
 
 void Caballo::dibuja() {
-	/*glColor3ub(255, 255, 255);
-	glBegin(GL_POLYGON);
-	glVertex3f(posicion.x-lado,posicion.y+lado, 0.0f);
-	glVertex3f(posicion.x + lado, posicion.y + lado, 0.0f);
-	glVertex3f(posicion.x + lado, posicion.y - lado, 0.0f);
-	glVertex3f(posicion.x - lado, posicion.y - lado, 0.0f);
-	glEnd();*/
+	
 
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
