@@ -58,3 +58,20 @@ Vector2D Vector2D::operator *(float f)
     res.y = y * f;
     return res;
 }
+
+Vector2D& Vector2D::operator+=(Vector2D& aux)
+{
+    this->x += aux.x;
+    this->y += aux.y;
+    return *this;
+}
+
+bool Vector2D::operator!=(Vector2D& aux)
+{
+    return (this->x != aux.x) || (this->y != aux.y);
+}
+
+bool Vector2D::operator==(Vector2D& aux)
+{
+    return (this->x == aux.x) && (this->y == aux.y);
+}
