@@ -20,5 +20,8 @@ public:
 	}
         Peon();
 	void dibuja();
+        bool movLegal(int ident_);
+	std::string getName();
+	bool movDiagonal(Vector2D,Vector2D);
 };
 
