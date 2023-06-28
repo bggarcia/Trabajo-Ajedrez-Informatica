@@ -32,9 +32,11 @@ bool Caballo::movLegal(int ident_) {
 	dif_aux=dif.absoluto(pos,pos_ini); //Se llama a la función absoluto de Vector2D que devuelve un vector con el 
 	//valor absoluto de cada miembro.
 
+	//El movimiento del caballo es de 2 casillas en una dirección y de 1 casilla en la otra. Se verifican a través
+	//del vector de diferencia auxiliar.
 	
-
-	
-
+	if ((dif_aux.x ==1.0f && dif_aux.y==2.0f) || (dif_aux.x==2.0f && dif_aux.y==1.0f) 
+		return true
+	else return false;
 }
 
