@@ -26,6 +26,10 @@ public:
     int getIdent();
     void setPieza(Figura* p);
     Figura* getPieza();
+    Vector2D getPos();
+    Vector2D getPos1();
+    float getPosX();
+    float getPosY();
 };
 
 
