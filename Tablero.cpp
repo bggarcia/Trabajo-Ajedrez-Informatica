@@ -1,12 +1,14 @@
 #include "Tablero.h"
 #include "freeglut.h"
-
+#include "ETSIDI.h"
 Tablero::Tablero(){
-//rojo = verde = azul = 255; //blanco
+
 }
 
 
-
+Tablero::Tablero(Vector2D pos) {
+    this->pos = pos;
+}
 Tablero::Tablero(float x1,float y1){
        this->pos.x=x1;
 	this->pos.y=y1;
