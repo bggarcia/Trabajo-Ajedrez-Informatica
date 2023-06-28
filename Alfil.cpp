@@ -42,9 +42,9 @@ bool Alfil::movLegal(int ident_)
 
 	//Si el valor absoluto del movimiento en filas es distinto al de columnas y ninguno de los dos es 0, no es el movimiento del alfil
 	//Esto se debe a que el alfil se desplaza siempre en la diagonal, es decir, aumentando a la vez la posición en filas y en columnas en valor absoluto
-	if (abs(dif.x)!=abs(dif.y) && dif.x !=0 && dif.y !=0)  
-	    return false;
-	return true;
+	if (abs(dif.x)==abs(dif.y) && dif.x !=0 && dif.y !=0)  
+	    return true
+	else return true;
 
 		
 }
