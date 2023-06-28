@@ -83,7 +83,7 @@ void Tablero::dibuja()
 
 
 }
-Vector2D Casilla::getPos() {
+Vector2D Tablero::getPos() {
     Vector2D pos;
     
     pos.x = (limite1.x + limite2.x) / 2.0f;
@@ -92,20 +92,20 @@ Vector2D Casilla::getPos() {
 
         return pos;
 }
-Vector2D Casilla::getPos1() {
+Vector2D Tablero::getPos1() {
     
 
 
     return this->pos;
 }
 
-float Casilla::getPosX() {
+float Tablero::getPosX() {
     return this->pos.x;
 }
-float Casilla::getPosY() {
+float Tablero::getPosY() {
     return this->pos.y;
 }
-void Casilla::setPos(float x1, float y1, float x2, float y2)
+void Tablero::setPos(float x1, float y1, float x2, float y2)
 {
     limite1.x = x1;
     limite1.y = y1;
