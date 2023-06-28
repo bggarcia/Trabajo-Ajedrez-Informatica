@@ -25,6 +25,7 @@ public:
      void identi(int i,int j);
     int getIdent();
     void setPieza(Figura* p);
+    Figura* getPieza();
 };
 
 
