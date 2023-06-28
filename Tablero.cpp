@@ -119,7 +119,24 @@ void Tablero::identi(int i, int j) {
     ident = (i  * 10) + j;
   
 }
+void Tablero::setPieza(Figura* p) {
+    if (this->Pieza != nullptr) {
+        this->Pieza->identidad = p->identidad;
+        this->Pieza->color = p->color;
+        //this->Pieza->vida = p->vida;
+        this->Pieza->tipo = p->tipo;
+    }
+    else
+        this->Pieza = p;
+}
 
+Figura* Tablero::getPieza() {
+
+   // Comprobar
+    if (this->Pieza == nullptr)
+        return nullptr;
+    return this->Pieza;
+}
 int Tablero::getIdent() {
     return ident;
 }
