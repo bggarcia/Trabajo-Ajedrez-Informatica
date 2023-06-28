@@ -24,12 +24,15 @@ void Alfil::dibuja() {
         sprite2.setState(2);
         sprite2.draw();
         glPopMatrix();
-    }
-
-	
+    }	
 }
 
 
-bool Alfil::movLegal(int ident_) {
-   
+bool Alfil::movLegal(int ident_) 
+{
+        Vector2D pos,pos_ini,dif,pos_var;
+	Vector2D cont;
+	bool flag=true;
+	bool aux=true;
+	int aux_x,aux_y;
 }
