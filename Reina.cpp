@@ -32,4 +32,20 @@ void Reina::dibuja(){
   std::string Reina::getName() {
     return tipo;
   }
+
+  bool Reina::movLegal(int ident_) {
+    Vector2D pos, pos_ini, dif, dif_aux;
+    pos_ini = this->getPos();
+    int aux_x, aux_y;
+    aux_x = ident_ / 10;
+    aux_y = ident_ % 10;
+    pos = { (float)aux_x,(float)aux_y };
+
+    dif = pos - pos_ini;
+
+    if ((dif.x == 0 && dif.y != 0) || (dif.x != 0 && dif.y == 0) || (abs(dif.x) == abs(dif.y) && dif.x != 0 && dif.y != 0)) 
+        return true;
+    else
+        return false;
+  }
 }
