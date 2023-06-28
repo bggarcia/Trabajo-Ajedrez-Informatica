@@ -19,6 +19,9 @@ public:
     Tablero();
     Tablero(float x1, float y1);
      virtual ~Tablero();
+     void dibuja();
+    void setColor(Byte r, Byte v, Byte a);
+    void setPos(float x1, float y1, float x2, float y2);
     
 };
 
