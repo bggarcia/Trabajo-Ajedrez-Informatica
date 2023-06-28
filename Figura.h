@@ -32,7 +32,7 @@ public:
     void setIdent(int identi);
     int getIdent();
     bool getColor(){return color;}
-
+    bool coronacion(int);
     
     friend class Tablero;
     friend class Casilla;
