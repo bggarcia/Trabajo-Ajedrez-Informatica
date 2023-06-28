@@ -16,4 +16,7 @@ Tablero::~Tablero()
 	
 }
 
-
+void Tablero::setColor(Byte r, Byte v, Byte a)
+{
+    color.set(r, v, a);
+}
