@@ -2,11 +2,10 @@
 #include "Figura.h"
 class Alfil : public Figura {
   private:
-	float lado;
+	float lado=0.1f;
 
 public:
 	Alfil(bool color_, int identidad_) :Figura(color_, identidad_) {
-		lado = 0.1f;
 		tipo="a";
 	}
 	Alfil();
