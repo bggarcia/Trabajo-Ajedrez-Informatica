@@ -10,5 +10,9 @@ public:
     lado=0.1f;
     tipo="q";
   }  
+Reina();
+void dibuja();
+bool movLegal(int ident_);
+std::string getName();
 };
 	
