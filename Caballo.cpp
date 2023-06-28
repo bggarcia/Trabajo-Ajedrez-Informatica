@@ -28,6 +28,12 @@ bool Caballo::movLegal(int ident_) {
 	aux_y=ident %10;
 	pos= {(float)aux_x,(float)aux_y};
 
+	dif=pos-pos_ini;
+	dif_aux=dif.absoluto(pos,pos_ini); //Se llama a la función absoluto de Vector2D que devuelve un vector con el 
+	//valor absoluto de cada miembro.
+
+	
+
 	
 
 }
