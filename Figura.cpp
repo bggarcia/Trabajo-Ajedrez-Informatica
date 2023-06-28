@@ -54,3 +54,12 @@ void Figura::setIdent(int identi) {
 int Figura::getIdent() {
 	return ident;
 }
+
+bool Figura::coronacion(int ident_)
+{
+	if (tipo=="p" && color && getPos().y == 8)//blancas
+		return true;
+	if (tipo == "p" && !color && getPos().y == 1)//negras
+		return true;
+	return false;
+}
