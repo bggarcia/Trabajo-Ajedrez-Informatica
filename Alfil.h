@@ -1,13 +1,13 @@
 #pragma once
+#include "Figura.h"
 class Alfil : public Figura {
   private:
 	float lado;
-	Tablero* posicionesLegales[NUM];
-	Vector2D max, min;
+
 public:
-	Alfil(bool color_, const std::string& tipo_) :Figura(color, tipo) {
+	Alfil(bool color_, int identidad_) :Figura(color_, identidad_) {
 		lado = 0.1f;
-		color=color_;
+		tipo="a";
 	}
 	Alfil();
 	void dibuja();
