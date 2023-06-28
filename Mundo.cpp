@@ -29,9 +29,22 @@ void Mundo::inicializa()
   x_ojo=0;
   y_ojo=7.5;
   z_ojo=30;
+  turno=true; //Empiezan siempre las piezas blancas
   //
+ }
+
+
+void Mundo::mueve() {
+  Vector2D destino,origen,dif,dif_aux,pos_var;
+  //destino y pos son los vectores 2D que almacenanlos valores de las coordenadas según las identidades.
+  //dif y dif_aux son las diferencias entre las identidades de destino y origen. Dan las casillas que se tiene que mover una pieza y en qué dirección (a través del signo)
+  Vector2D cont={0,0};
+  bool aux=true,flag=true;              //Variables auxiliares para comprobaciones 
+  float contx,conty;                    //Contadores auxiliares para facilitar el valor absoluto
+  int aux_x,aux_y;                      //Variables auxiliares para realizar la división entera
+  char id_o[3],id_d[3];                 //Cadenas de caracteres en las que se almacenan las casillas, con formato "letra-numero" ej. "a2"
+
+
 
   
-  
-  
- }
+}
