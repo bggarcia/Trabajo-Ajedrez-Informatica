@@ -43,6 +43,19 @@ void Mundo::mueve() {
   float contx,conty;                    //Contadores auxiliares para facilitar el valor absoluto
   int aux_x,aux_y;                      //Variables auxiliares para realizar la división entera
   char id_o[3],id_d[3];                 //Cadenas de caracteres en las que se almacenan las casillas, con formato "letra-numero" ej. "a2"
+  if (turno){   //Diferencia entre los turnos para las comprobaciones del bucle while
+  do{
+    cout << "Introduzca la casilla de la pieza que quiera mover:";
+    cin >> id_o;
+    ident=conversion(id_o)
+    }while ((lt.getColor(ident)==false && lt.getCasillaPos(ident)->getPieza()!=nullptr) || lt.getCasillaPos(ident)->getPieza() == nullptr || lt.cumpleLimites(ident)==false);
+  }
+  else {
+
+    
+  }
+
+    
 
 
 
