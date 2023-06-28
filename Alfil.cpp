@@ -30,9 +30,21 @@ void Alfil::dibuja() {
 
 bool Alfil::movLegal(int ident_) 
 {
-        Vector2D pos,pos_ini,dif,pos_var;
-	Vector2D cont;
-	bool flag=true;
-	bool aux=true;
-	int aux_x,aux_y;
+        Vector2D pos,pos_ini,dif;
+	int aux_x,aux_y; //variables utilizadas para la división entera sin decimales.
+
+	aux_x=ident/10;
+	aux_y=ident%10;
+	pos={(float)aux_x,(float)aux_y};
+	pos_ini=this->getPos();
+	dif=pos-pos_ini;
+
+
+	//Si el valor absoluto del movimiento en filas es distinto al de columnas y ninguno de los dos es 0, no es el movimiento del alfil
+	//Esto se debe a que el alfil se desplaza siempre en la diagonal, es decir, aumentando a la vez la posición en filas y en columnas en valor absoluto
+	if (abs(dif.x)!=abs(dif.y) && dif.x !=0 && dif.y !=0)  
+	    return false;
+	return true;
+
+		
 }
