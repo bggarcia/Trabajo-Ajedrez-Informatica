@@ -9,6 +9,6 @@ public:
 	Alfil();
 	void dibuja();
 	bool movLegal(int ident_);
-	std::string getName();
+	std::string getName()              {return tipo;}
 };
 
