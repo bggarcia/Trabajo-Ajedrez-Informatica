@@ -61,3 +61,18 @@ void Mundo::mueve() {
 
   
 }
+
+int Mundo::conversion(char id[3] {          //Función que se encarga de convertir la letra de la casilla en la identidad utilizada
+  switch (id[0])
+    {
+      case 'a': return 1*10 + static_cast<int>(id[1]); break;        //Se utiliza el static_cast<int> para convertir el segundo caracter a un número.
+      case 'b': return 2*10 + static_cast<int>(id[1]); break; 
+      case 'c': return 3*10 + static_cast<int>(id[1]); break; 
+      case 'd': return 4*10 + static_cast<int>(id[1]); break; 
+      case 'e': return 5*10 + static_cast<int>(id[1]); break; 
+      case 'f': return 6*10 + static_cast<int>(id[1]); break; 
+      case 'g': return 7*10 + static_cast<int>(id[1]); break; 
+      case 'h': return 8*10 + static_cast<int>(id[1]); break; 
+      default: return 99; break;    //Si la letra no es ninguna de la "a" a la "h", retorna 99 para que entre en lt.cumpleLimites() y retorne false
+    }
+}
