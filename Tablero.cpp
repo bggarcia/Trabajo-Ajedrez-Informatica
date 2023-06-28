@@ -112,3 +112,14 @@ void Tablero::setPos(float x1, float y1, float x2, float y2)
     limite2.x = x2;
     limite2.y = y2;
 }
+
+//identidades
+
+void Tablero::identi(int i, int j) {
+    ident = (i  * 10) + j;
+  
+}
+
+int Tablero::getIdent() {
+    return ident;
+}
