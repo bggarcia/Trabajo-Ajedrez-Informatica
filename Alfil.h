@@ -5,9 +5,7 @@ class Alfil : public Figura {
 	float lado=0.1f;
 
 public:
-	Alfil(bool color_, int identidad_) :Figura(color_, identidad_) {
-		tipo="a";
-	}
+	Alfil(bool color_, int identidad_) :Figura(color_, identidad_)        {tipo="a";}
 	Alfil();
 	void dibuja();
 	bool movLegal(int ident_);
