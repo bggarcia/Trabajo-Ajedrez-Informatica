@@ -1,8 +1,8 @@
 #pragma once
+#include "Figura.h"
 class Rey : public Pieza {
 private:
 	float lado;
-	bool primerMov;
 public:
 	Rey(bool color_, const std::string& tipo_, int identidad_, bool vida_) :Figura(color_, tipo_, identidad_, vida_) {
 		lado = 0.1f;
