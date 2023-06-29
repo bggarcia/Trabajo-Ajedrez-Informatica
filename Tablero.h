@@ -25,6 +25,8 @@ public:
     void setPos();
     Vector2D getMin();
     Vector2D getMax();
+    bool getCasilla(int ident);
+    void setIndent();
 };
 
 
