@@ -1,19 +1,19 @@
-#include "Tablero.h"
+#include "Casilla.h"
 #include "freeglut.h"
 #include "ETSIDI.h"
-Tablero::Tablero(){
+Casilla::Casilla(){
 
 }
 
 
-Tablero::Tablero(Vector2D pos) {
+Casilla::Casilla(Vector2D pos) {
     this->pos = pos;
 }
-Tablero::Tablero(float x1,float y1){
+Casilla::Casilla(float x1,float y1){
        this->pos.x=x1;
 	this->pos.y=y1;
 
-Tablero::~Tablero()
+Casilla::~Casilla()
 {
 	
 }
