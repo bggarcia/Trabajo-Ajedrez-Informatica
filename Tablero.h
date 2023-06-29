@@ -5,7 +5,7 @@
 
 //class Tablero
 
-class Tablero
+class Casilla
 {
 private:
     
@@ -16,9 +16,9 @@ private:
     int ident;
     Figura* Pieza = nullptr;
 public:
-    Tablero();
-    Tablero(float x1, float y1);
-     virtual ~Tablero();
+    Casilla();
+    Casilla(float x1, float y1);
+     virtual ~Casilla();
      void dibuja();
     void setColor(Byte r, Byte v, Byte a);
     void setPos(float x1, float y1, float x2, float y2);
