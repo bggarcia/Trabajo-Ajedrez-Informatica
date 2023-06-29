@@ -35,25 +35,7 @@ void Mundo::inicializa()
 
 
 void Mundo::mueve() {
-  Vector2D destino,origen,dif,dif_aux,pos_var;
-  //destino y pos son los vectores 2D que almacenanlos valores de las coordenadas según las identidades.
-  //dif y dif_aux son las diferencias entre las identidades de destino y origen. Dan las casillas que se tiene que mover una pieza y en qué dirección (a través del signo)
-  Vector2D cont={0,0};
-  bool aux=true,flag=true;              //Variables auxiliares para comprobaciones 
-  float contx,conty;                    //Contadores auxiliares para facilitar el valor absoluto
-  int aux_x,aux_y;                      //Variables auxiliares para realizar la división entera
-  char id_o[3],id_d[3];                 //Cadenas de caracteres en las que se almacenan las casillas, con formato "letra-numero" ej. "a2"
-  if (turno){   //Diferencia entre los turnos para las comprobaciones del bucle while
-  do{
-    cout << "Introduzca la casilla de la pieza que quiera mover:";
-    cin >> id_o;
-    ident=conversion(id_o)
-    }while ((lt.getColor(ident)==false && lt.getCasillaPos(ident)->getPieza()!=nullptr) || lt.getCasillaPos(ident)->getPieza() == nullptr || lt.cumpleLimites(ident)==false);
-  }
-  else {
-
-    
-  }
+ 
 
     
 
