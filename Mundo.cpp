@@ -35,7 +35,30 @@ void Mundo::inicializa()
 
 
 void Mundo::mueve() {
- 
+ bool flag_medio,flag_mov; //flags distintas para pieza en medio y movimiento legal
+	do{
+		flag_medio=true; //set para que al principio de cada bucle no influya el valor del bucle anterior
+		flag_mov=false;
+		introducirCasilla();
+		if (lt.getCasillaPos(ident)->getPieza()->movLegal(pos)) { 
+			flag_mov = true;//Si la casilla destino es un movimiento legal de la figura://comprobar piezas en medio
+		}
+		else
+		{
+			cout << "Movimiento no realizable, introduzca la casilla otra vez." << endl;
+			flag_mov = false;
+		}
+		if (flag_mov && lt.getCasillaPos(ident)->getPieza()->getName() != "c" && lt.getCasillaPos(ident)->getPieza()->getName() != "k")
+			flag_medio = piezaEnMedio(); //Solo entra en piezaEnMedio si no es un caballo o un rey ya que en rey no es necesario y caballo no tiene que entrar
+		else
+			flag_medio = true;
+		if (flag_mov && flag_medio) { //si las dos flags son true, se puede realizar el movimiento
+			if (lt.getCasillaPos(ident)->getPieza()->getName() == "p") //Si la pieza además es un peón, se mueve y primerMov se pone a false
+				lt.getCasillaPos(ident)->getPieza()->setPrimerMov(false);
+			realizarMovimiento();
+		}
+		
+	}while (flag_mov==false || flag_medio==false);
 
     
 
@@ -80,14 +103,24 @@ void Mundo::realizarMovimiento()
 int Mundo::conversion(char id[3] {          //Función que se encarga de convertir la letra de la casilla en la identidad utilizada
   switch (id[0])
     {
-      case 'a': return 1*10 + static_cast<int>(id[1]); break;        //Se utiliza el static_cast<int> para convertir el segundo caracter a un número.
-      case 'b': return 2*10 + static_cast<int>(id[1]); break; 
-      case 'c': return 3*10 + static_cast<int>(id[1]); break; 
-      case 'd': return 4*10 + static_cast<int>(id[1]); break; 
-      case 'e': return 5*10 + static_cast<int>(id[1]); break; 
-      case 'f': return 6*10 + static_cast<int>(id[1]); break; 
-      case 'g': return 7*10 + static_cast<int>(id[1]); break; 
-      case 'h': return 8*10 + static_cast<int>(id[1]); break; 
+         //Minusculas
+      case 'a': return 1*10 + static_cast<int>(id[1]- '0'); break;        //Se utiliza el static_cast<int> para convertir el segundo caracter a un número.
+      case 'b': return 2*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'c': return 3*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'd': return 4*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'e': return 5*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'f': return 6*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'g': return 7*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'h': return 8*10 + static_cast<int>(id[1]- '0'); break; 
+	// Mayusculas
+      case 'A': return 1*10 + static_cast<int>(id[1]- '0'); break;      
+      case 'B': return 2*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'C': return 3*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'D': return 4*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'E': return 5*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'F': return 6*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'G': return 7*10 + static_cast<int>(id[1]- '0'); break; 
+      case 'H': return 8*10 + static_cast<int>(id[1]- '0'); break; 
       default: return 99; break;    //Si la letra no es ninguna de la "a" a la "h", retorna 99 para que entre en lt.cumpleLimites() y retorne false
     }
 }
