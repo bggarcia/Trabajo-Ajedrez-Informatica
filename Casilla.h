@@ -30,6 +30,7 @@ public:
     Vector2D getPos1();
     float getPosX();
     float getPosY();
+    friend class Tablero;
 };
 
 
