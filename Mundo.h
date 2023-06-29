@@ -17,6 +17,9 @@ public:
         void tecla(unsigned char key);
         void inicializa();
         void mueve();
+        bool piezaEnMedio();
+        void realizarMovimiento();
+	void introducirCasilla();
         void dibuja();
         void teclaEspecial(unsigned char key);
         int conversion(char[]); //Se encarga de convertir la posición de la casilla en formato letra-número a la identidad.
