@@ -119,9 +119,116 @@ bool Mundo::piezaEnMedio()
 	origen = lt.getCasillaPos(ident)->getPieza()->getPos(); //Se le pasa a origen la posición de la pieza.
 	dif = destino - origen;
 	dif_aux = dif.absoluto(destino, origen); //Almacena en dif_aux el valor absoluto de cada elemento.
+	
+	if (dif.x == 0)    //////////////// evitamos que sea dividido entre 0
+		contx = 0.0f;
+	else
+		contx = dif.x / abs(dif.x); //Se divide la dirección por su valor absoluto para obtener un unitario de dirección (1 o -1 para las x e y)
+
+	if (dif.y == 0)
+		conty = 0.0f;
+	else
+		conty = dif.y / abs(dif.y);
+
+	cont = { contx,conty }; //el contador avanza en filas y columnas en cada bucle del while por la dirección dl movimiento.
+	pos_var = origen + cont; //Para comprobar las piezas en medio se pone inicialmente la posición variable a la casilla inicial;
+	if (lt.getCasillaPos(ident)->getPieza()->getName() == "p")
+	{
+		if (dif.y == cont.y && dif_aux.x == 1.0f) { //Si el movimiento es diagonal
+			if (lt.getCasillaPos(pos)->getPieza() != nullptr && lt.getCasillaPos(pos)->getPieza()->getColor() != lt.getCasillaPos(ident)->getPieza()->getColor())
+			{
+				return true;
+			}
+			else
+				cout << "Peon no se puede mover en diagonal si no hay una pieza de distinto color en esa casilla" << endl;
+			return false;
+		}
+		if (((dif.y == cont.y) || (dif.y == cont.y * 2)) && dif.x == 0 && lt.getCasillaPos(pos)->getPieza()!=nullptr) //Si el movimiento es recto y hay una pieza en la posición final
+		{
+			return false;
+		}
+	}
+
+	while (pos_var != destino && flag == true) {
+			//for (int j = MAX_TABLEROS; j > 0; j--) {
+			 for (int i = 0; i < CAS; i++) {
+				if (lt.getCasillaIndice(i)->getPieza() == nullptr)
+
+					aux = false;
+				else
+					aux = true;
+				if (flag) {
+					if (aux && pos_var.x == lt.getCasillaIndice(i)->getPieza()->getPos().x
+						&& pos_var.y == lt.getCasillaIndice(i)->getPieza()->getPos().y) {
+						flag = false;
+						cout << "Existe una pieza en medio, movimiento no realizable" << endl;
+					}
+					else flag = true;		
+				}
+			}
+			pos_var += cont;
+		}
+	return flag;
 
 	
 }
+
+bool Mundo::piezaEnMedioJaque(int id,int amenaza)
+{
+	Vector2D destino, origen, dif, dif_aux, pos_var;
+	//destino y pos son los vectores 2D que almacenan los valores de las coordenadas según las identidades.
+	//dif y dif_aux son las diferencias entre las identidades de destino y origen. Dan las casillas que se tienen que mover y en qué dirección (signo)
+
+	Vector2D cont = { 0,0 };
+	bool aux = true, flag = true;
+	float contx, conty;
+	
+	destino = lt.getCasillaPos(id)->getPieza()->getPos();
+	origen = lt.getCasillaPos(amenaza)->getPieza()->getPos(); //Se le pasa a origen la posición de la pieza.
+	dif = destino - origen;
+	dif_aux = dif.absoluto(destino, origen); //Almacena en dif_aux el valor absoluto de cada elemento.
+
+	if (dif.x == 0)    //////////////// evitamos que sea dividido entre 0
+		contx = 0.0f;
+	else
+		contx = dif.x / abs(dif.x); //Se divide la dirección por su valor absoluto para obtener un unitario de dirección (1 o -1 para las x e y)
+
+	if (dif.y == 0)
+		conty = 0.0f;
+	else
+		conty = dif.y / abs(dif.y);
+
+	cont = { contx,conty }; //el contador avanza en filas y columnas en cada bucle del while por la dirección dl movimiento.
+	pos_var = origen + cont; //Para comprobar las piezas en medio se pone inicialmente la posición variable a la casilla inicial;
+
+	if (lt.getCasillaPos(amenaza)->getPieza()->getName() == "c")
+		return true;
+
+	while (pos_var != destino && flag == true) {
+		
+		for (int i = 0; i < CAS; i++) {
+			
+			if (lt.getCasillaIndice(i)->getPieza() == nullptr)
+				aux = false;
+			else
+				aux = true;
+			if (flag) {
+				if (aux && pos_var.x == lt.getCasillaIndice(i)->getPieza()->getPos().x
+					&& pos_var.y == lt.getCasillaIndice(i)->getPieza()->getPos().y) {
+					flag=false;
+					
+				}
+				else
+					flag=true;
+			}
+			
+		}
+		pos_var += cont;
+	}
+	return flag;
+}
+
+
 void Mundo::realizarMovimiento()
 {
 	
@@ -136,11 +243,13 @@ void Mundo::realizarMovimiento()
 }
 
 int Mundo::conversion(char id[3] {          //Función que se encarga de convertir la letra de la casilla en la identidad utilizada
-  switch (id[0])
+   if (id[0] > 64 && id[0] < 73)   //conversion mayusculas a minusculas mediante ascii
+	id[0] += 32;
+	
+	 switch (id[0])
     {
-	    if (id[0] > 64 && id[0] < 73)   //conversion mayusculas a minusculas mediante ascii
-		id[0] += 32;
-         //Minusculas
+	  
+        
       case 'a': return 1*10 + static_cast<int>(id[1]- '0'); break;        //Se utiliza el static_cast<int> para convertir el segundo caracter a un número.
       case 'b': return 2*10 + static_cast<int>(id[1]- '0'); break; 
       case 'c': return 3*10 + static_cast<int>(id[1]- '0'); break; 
