@@ -10,6 +10,8 @@ void Mundo::dibuja()
             0.0, y_ojo, 0.0,
             0.0, 1.0, 0.0);
   glEnable(GL_TEXTURE_2D);
+
+
   glBindTexture(GL_TEXTURE_2D,ETSIDI::getTexture("bin/imagenes/madera.png").id); //Textura del fondo
 
   glDisable(GL_LIGHTING);
@@ -26,6 +28,32 @@ void Mundo::dibuja()
   lt.dibuja();
  }
 
+  if (turno && !lt.getFin()){
+		ETSIDI::setTextColor(255, 255, 255);
+		ETSIDI::setFont("bin/fuentes/Classica-BoldOblique.ttf", 35);
+		ETSIDI::printxy("Turno Blancas", 1, 9);
+		ETSIDI::play("bin/sonidos/Disparo.mp3");
+   }
+   if (!turno && !lt.getFin())
+   {
+		ETSIDI::setTextColor(0, 0, 0);
+		ETSIDI::setFont("bin/fuentes/Classica-BoldOblique.ttf", 35);
+		ETSIDI::printxy("Turno Negras", 1, 9);
+		ETSIDI::play("bin/sonidos/Disparo.mp3");
+   }
+   if (lt.getFin())
+   {
+			
+	ETSIDI::setTextColor(1, 0, 0);
+	ETSIDI::setFont("bin/fuentes/Classica-Book.ttf", 16);
+	ETSIDI::printxy("JAQUEMATE: Has perdido", 1, 9);
+	ETSIDI::printxy("Pulsa -C- para continuar", -5, 5);
+	if (turno)
+		ETSIDI::printxy("GANAN BLANCAS", -5, 6);
+	else
+		ETSIDI::printxy("GANAN NEGRAS", -5, 6);
+   }
+
 void Mundo::inicializa()
 {
   x_ojo=0;
@@ -41,6 +69,11 @@ void Mundo::mueve() {
 	do{
 		flag_medio=true; //set para que al principio de cada bucle no influya el valor del bucle anterior
 		flag_mov=false;
+		if (ident != 0) {
+			if (jaque())
+			{
+				cout << "ALERTA JAQUE"<<endl;
+			}
 		introducirCasilla();
 		if (lt.getCasillaPos(ident)->getPieza()->movLegal(pos)) { 
 			flag_mov = true;//Si la casilla destino es un movimiento legal de la figura://comprobar piezas en medio
@@ -62,7 +95,7 @@ void Mundo::mueve() {
 		
 	}while (flag_mov==false || flag_medio==false);
 
-    
+    turno=!turno:
 
 
 
