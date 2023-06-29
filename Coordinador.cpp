@@ -11,6 +11,8 @@ Coordinador::~Coordinador()
 }
 void Coordinador::dibuja()
 {
+  if (mundo.lt.getFin())
+        estado = GAMEOVER;
     if (estado == INICIO) 
     {
         gluLookAt(0, 7.5, 30, // posicion del ojo
@@ -43,6 +45,8 @@ void Coordinador::dibuja()
     {
       mundo.dibuja();
         aux = true;
+      if (mundo.lt.getFin())
+        estado = GAMEOVER;
     }
     else if (estado == GAMEOVER)
     {
@@ -101,7 +105,7 @@ void Coordinador::tecla(unsigned char key)
             ETSIDI::play("bin/sonidos/Pause.mp3");
         }
         if (key == 'f') estado = FIN;
-        if (key == 'g')
+        if (mundo.lt.getFin())
         {
             estado = GAMEOVER;
             ETSIDI::play("bin/sonidos/GameOver.mp3");
@@ -138,7 +142,7 @@ void Coordinador::teclaESpecial(unsigned char key)
 
 void Coordinador::mueve()
 {
-     if (estado == JUEGO && aux==true)
+     if (estado == JUEGO && aux==true && !mundo.lt.getFin())
     {
         mundo.mueve();
     }
