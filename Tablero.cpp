@@ -118,3 +118,59 @@ Vector2D Tablero::getMax() {
     pos=(*(listaa+7)+7)->getPos();
     return pos;
 }
+
+bool Tablero::getCasilla(int ident) {
+
+    for (int i = 0; i < MAX_TABLEROS; i++) {
+        for (int j = 0; j < MAX_TABLEROS; j++) {
+            //listaa[i]->dibuja();
+            // //lista[i][j]
+           //delete (*(listaa + i) + j);
+           /* if ((*(listaa + i) + j)->getIdent() == ident)
+                return true;*/
+            if (listaa[i][j].getIdent() == ident)
+                return true;
+        }
+    }
+
+    return false;
+}
+
+void Tablero::setPos() {
+
+    
+    for (int i = 0; i < MAX_TABLEROS; i++) {
+        for (int j = 0; j < MAX_TABLEROS; j++) {
+            //listaa[i]->dibuja();
+            if ((i + j) % 2 == 0) {
+                (*(listaa + i) + j)->setColor(101, 67, 33);
+                
+            }
+            else{
+                (*(listaa + i) + j)->setColor(225, 198, 153);
+            }
+
+            (*(listaa + i) + j)->setPos( 0.5f+(float)j,0.5f+  (float)i, 1.5f + (float)j, 1.5f + (float)i);
+        }
+    }
+}
+
+
+Casilla* Tablero::getCasilla(int i, int j) {
+
+    return (*(listaa + i) + j);
+}
+
+Casilla* Tablero::getCasillaPos(int ident)
+{
+   
+    for ( int i = 0;  i < CAS;  i++)
+    {
+        if (listaa[i]->getIdent() == ident)
+            return listaa[i];
+    }
+    return nullptr;
+    
+    
+}
+
