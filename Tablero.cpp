@@ -76,3 +76,20 @@ Tablero::~Tablero() {
         }
     }
 }
+
+void Tablero::Dibuja()
+{
+
+    for (int i = 0; i < MAX_TABLEROS; i++) {
+        
+            //listaa[i]->dibuja();
+        for (int j = 0; j < MAX_TABLEROS; j++) {
+            (*(listaa + i) + j)->dibuja();
+        }
+        
+    }
+    for (int i = 0; i < CAS; i++) {
+        if (listaa[i]->getPieza() != NULL)
+            listaa[i]->getPieza()->dibuja();
+    }
+}
