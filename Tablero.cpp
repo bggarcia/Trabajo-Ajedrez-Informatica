@@ -106,3 +106,15 @@ void Tablero::setIndent() {
     }
 }
 
+Vector2D Tablero::getMin() {
+    Vector2D pos;
+    pos=(*(listaa))->getPos();
+
+    return pos;
+}
+
+Vector2D Tablero::getMax() {
+    Vector2D pos;
+    pos=(*(listaa+7)+7)->getPos();
+    return pos;
+}
