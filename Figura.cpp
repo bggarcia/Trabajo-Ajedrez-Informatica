@@ -43,16 +43,18 @@ void Figura::setPos(Vector2D pos)
 }
 
 void Figura::setPos(int ident) {
-	posicion.x = ident / 10;
-	posicion.y = ident % 10;
+	int aux_x,aux_y;
+	aux_x = ident / 10;
+	aux_y = ident % 10;
+	posicion={(float)aux_x,(float)aux_y};
 }
 
 void Figura::setIdent(int identi) {
-	ident = identi;
+	identidad = identi;
 }
 
 int Figura::getIdent() {
-	return ident;
+	return identidad
 }
 
 bool Figura::coronacion(int ident_)
