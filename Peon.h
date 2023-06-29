@@ -6,7 +6,6 @@
 class Peon : public Figura {
 private:
         float altura;
-	bool primerMov
 
 public:
 	Peon(bool color_,const std::string &tipo_,int identidad_,bool vida_):Figura(color_,tipo_,identidad_,vida_){
