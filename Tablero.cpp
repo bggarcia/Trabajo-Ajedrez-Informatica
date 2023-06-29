@@ -89,7 +89,7 @@ void Tablero::Dibuja()
         
     }
     for (int i = 0; i < CAS; i++) {
-        if (listaa[i]->getPieza() != NULL)
+        if (listaa[i]->getPieza() != nullptr)
             listaa[i]->getPieza()->dibuja();
     }
 }
@@ -169,7 +169,8 @@ Casilla* Tablero::getCasillaPos(int ident)
         if (listaa[i]->getIdent() == ident)
             return listaa[i];
     }
-    return nullptr;
+    return listaa[0]; //Si la identidad no coincide, devuelve un valor arbitrario.
+    //El control de acceso a este elemento se hace desde fuera a través de cumpleLimites.
     
     
 }
@@ -197,10 +198,14 @@ bool Tablero::cumpleLimites(int ident) {
 
 void Tablero::eliminarPieza(int destino)
 {
-    int i = destino / 10;
-    int j = destino % 10;
-
-    listaa[i][j].setPieza(NULL);
+   if (this->getCasillaPos(destino)->getPieza() != nullptr)
+    {
+        if (this->getCasillaPos(destino)->getPieza()->getName() == "k")
+        {
+            fin = true;
+        }
+    }
+    this->getCasillaPos(destino)->setPieza(nullptr);
 
 }
 
