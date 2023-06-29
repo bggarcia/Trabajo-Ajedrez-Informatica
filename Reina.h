@@ -1,4 +1,5 @@
 #pragma once
+#include "Figura.h"
 class Reina : public Pieza {
 private:
   float lado;
