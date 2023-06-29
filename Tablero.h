@@ -29,6 +29,10 @@ public:
     void setIndent();
     Casilla* getCasilla(int i, int j);
     Casilla* getCasillaPos(int ident);
+    bool getColor(int ident);
+    bool cumpleLimites(int ident);
+    //Figura* getPiezaEnCasilla(int ident);
+    void eliminarPieza(int ident);
 };
 
 
