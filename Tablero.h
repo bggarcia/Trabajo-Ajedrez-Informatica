@@ -33,6 +33,9 @@ public:
     bool cumpleLimites(int ident);
     //Figura* getPiezaEnCasilla(int ident);
     void eliminarPieza(int ident);
+    Casilla* getCasillaIndice(int i);
+    void setFin(bool fin_) { fin = fin_; }
+    bool getFin() { return fin; }
 };
 
 
