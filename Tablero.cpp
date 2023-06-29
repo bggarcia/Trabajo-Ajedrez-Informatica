@@ -173,4 +173,10 @@ Casilla* Tablero::getCasillaPos(int ident)
     
     
 }
+bool Tablero::getColor(int ident) {
 
+   //Arbitrario, normalmente al hacer la comprobación desde fuera se hará solamente si la pieza no es nullptr. Se retorna un valor por seguridad.
+    if (getCasillaPos(ident) != nullptr)
+        return getCasillaPos(ident)->getPieza()->getColor();
+    else return false;
+}
