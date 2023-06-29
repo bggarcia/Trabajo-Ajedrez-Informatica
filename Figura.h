@@ -12,6 +12,7 @@ protected:
     Vector2D posicion;
     int ident;
     bool color;
+    bool primerMov=true;
     string tipo;
     SpriteSequence sprite1{ "bin/imagenes/piezas_blancas.png", 6 };
     SpriteSequence sprite2{ "bin/imagenes/piezas_negras.png", 6 };
@@ -28,10 +29,13 @@ public:
     void setPos(float x, float y);
     void setPos(Vector2D pos);
     void setPos(int ident);
+    void setPrimerMov(bool mov) { primerMov = mov; }
     //
     void setIdent(int identi);
     int getIdent();
-    bool getColor(){return color;}
+    bool getColor(){ if (this == nullptr)
+            return false;
+        return color;}
     bool coronacion(int);
     
     friend class Tablero;
