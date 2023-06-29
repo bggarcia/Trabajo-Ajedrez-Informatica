@@ -180,3 +180,26 @@ bool Tablero::getColor(int ident) {
         return getCasillaPos(ident)->getPieza()->getColor();
     else return false;
 }
+
+bool Tablero::cumpleLimites(int ident) {
+    Vector2D pos;
+    int aux_x, aux_y;
+    aux_x = ident / 10; //valores auxiliares para que el primero se haga entero y luego se pase como float. Si se hiciera directamente la división float, quedaría una posición con decimales
+    aux_y = ident % 10;
+    pos = { (float)aux_x,(float)aux_y }; 
+    if (pos.x < 1 || pos.x>8 || pos.y < 1 || pos.y>8) {
+        return false;
+    }
+    else return true;
+}
+
+
+
+void Tablero::eliminarPieza(int destino)
+{
+    int i = destino / 10;
+    int j = destino % 10;
+
+    listaa[i][j].setPieza(NULL);
+
+}
