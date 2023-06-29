@@ -28,6 +28,7 @@ void Reina::dibuja(){
         sprite2.draw();
         glPopMatrix();
   }
+}
 
   std::string Reina::getName() {
     return tipo;
