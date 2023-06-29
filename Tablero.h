@@ -27,6 +27,8 @@ public:
     Vector2D getMax();
     bool getCasilla(int ident);
     void setIndent();
+    Casilla* getCasilla(int i, int j);
+    Casilla* getCasillaPos(int ident);
 };
 
 
