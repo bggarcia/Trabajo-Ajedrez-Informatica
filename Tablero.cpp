@@ -18,11 +18,11 @@ Casilla::~Casilla()
 	
 }
 
-void Tablero::setColor(Byte r, Byte v, Byte a)
+void Casilla::setColor(Byte r, Byte v, Byte a)
 {
     color.set(r, v, a);
 }
-void Tablero::dibuja()
+void Casilla::dibuja()
 {
     //FUENTES
     ETSIDI::setTextColor(233, 190, 107);
@@ -83,7 +83,7 @@ void Tablero::dibuja()
 
 
 }
-Vector2D Tablero::getPos() {
+Vector2D Casilla::getPos() {
     Vector2D pos;
     
     pos.x = (limite1.x + limite2.x) / 2.0f;
@@ -92,20 +92,20 @@ Vector2D Tablero::getPos() {
 
         return pos;
 }
-Vector2D Tablero::getPos1() {
+Vector2D Casilla::getPos1() {
     
 
 
     return this->pos;
 }
 
-float Tablero::getPosX() {
+float Casilla::getPosX() {
     return this->pos.x;
 }
-float Tablero::getPosY() {
+float Casilla::getPosY() {
     return this->pos.y;
 }
-void Tablero::setPos(float x1, float y1, float x2, float y2)
+void Casilla::setPos(float x1, float y1, float x2, float y2)
 {
     limite1.x = x1;
     limite1.y = y1;
@@ -115,11 +115,11 @@ void Tablero::setPos(float x1, float y1, float x2, float y2)
 
 //identidades
 
-void Tablero::identi(int i, int j) {
+void Casilla::identi(int i, int j) {
     ident = (i  * 10) + j;
   
 }
-void Tablero::setPieza(Figura* p) {
+void Casilla::setPieza(Figura* p) {
     if (this->Pieza != nullptr) {
         this->Pieza->identidad = p->identidad;
         this->Pieza->color = p->color;
@@ -130,13 +130,13 @@ void Tablero::setPieza(Figura* p) {
         this->Pieza = p;
 }
 
-Figura* Tablero::getPieza() {
+Figura* Casilla::getPieza() {
 
    // Comprobar
     if (this->Pieza == nullptr)
         return nullptr;
     return this->Pieza;
 }
-int Tablero::getIdent() {
+int Casilla::getIdent() {
     return ident;
 }
