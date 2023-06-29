@@ -61,6 +61,27 @@ void Mundo::mueve() {
 
   
 }
+
+bool Mundo::piezaEnMedio()
+{
+	Vector2D destino, origen, dif, dif_aux, pos_var;
+	//destino y pos son los vectores 2D que almacenan los valores de las coordenadas según las identidades.
+	//dif y dif_aux son las diferencias entre las identidades de destino y origen. Dan las casillas que se tienen que mover y en qué dirección (signo)
+
+	Vector2D cont = { 0,0 };
+	bool aux = true, flag = true;
+	float contx, conty;
+	int aux_x, aux_y;
+
+	aux_x = pos / 10;
+	aux_y = pos % 10;
+	destino = { (float)aux_x,(float)aux_y };
+	origen = lt.getCasillaPos(ident)->getPieza()->getPos(); //Se le pasa a origen la posición de la pieza.
+	dif = destino - origen;
+	dif_aux = dif.absoluto(destino, origen); //Almacena en dif_aux el valor absoluto de cada elemento.
+
+	
+}
 void Mundo::realizarMovimiento()
 {
 	
