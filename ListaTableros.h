@@ -1,27 +1,28 @@
 #pragma once
-#include "Tablero.h"
-#include "Figura.h"
+#include "Casilla.h"
+//#include "Figura.h"
+#include "Peon.h"
+#include "Torre.h"
+#include "Caballo.h"
+#include "Alfil.h"
+#include "Reina.h"
+#include "Rey.h"
 #define MAX_TABLEROS 8
 #define NUM 14
+#define MAX_FIGURAS 32
 #define CAS 64
-class ListaTableros
+
+
+class Tablero
 {
 private:
-    Tablero **listaa;
-    Tablero* posicionesLegales[NUM];
-    Tablero* casillasOcupadas[CAS];
+    Casilla **listaa;
+    
 public:
-    ListaTableros();
-    virtual ~ListaTableros();
-    void Dibuja();
-    void setPos();
-    Vector2D getMin();
-    Vector2D getMax();
-    bool getCasilla(int ident);
-    void setIndent();
-    bool piezasEnMedio(Figura *ListaFiguras, int cont, int origen, int destino);
-    bool getCasillaOcupada(int destino,int cont);
-    int compPiezaMismoColor(Figura* ListaFiguras, int i_, int origen, int destino, int cont);
-    friend class Interaccion;
-    friend class Figura;
+    Tablero();
+    virtual ~Tablero();
+  
+
 };
+
+
