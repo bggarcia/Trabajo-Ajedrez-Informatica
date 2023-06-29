@@ -4,7 +4,7 @@
 Peon:: Peon()
 {
 	altura=0.1f;
-	//primerMov=false;
+	primerMov=false;
 }
 
 
