@@ -23,7 +23,8 @@ public:
     virtual ~Tablero();
     void Dibuja();
     void setPos();
-
+    Vector2D getMin();
+    Vector2D getMax();
 };
 
 
