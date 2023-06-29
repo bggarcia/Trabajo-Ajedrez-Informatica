@@ -21,7 +21,8 @@ private:
 public:
     Tablero();
     virtual ~Tablero();
-  
+    void Dibuja();
+    void setPos();
 
 };
 
