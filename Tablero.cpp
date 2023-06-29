@@ -203,3 +203,8 @@ void Tablero::eliminarPieza(int destino)
     listaa[i][j].setPieza(NULL);
 
 }
+
+Casilla* Tablero::getCasillaIndice(int i) {
+
+    return listaa[i];
+}
