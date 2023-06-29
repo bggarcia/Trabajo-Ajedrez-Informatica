@@ -1,5 +1,7 @@
 #include "Mundo.h"
 #include "freeglut.h"
+#include <math.h>
+#include <iostream>
 
 void Mundo::dibuja()
   
