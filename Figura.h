@@ -16,6 +16,7 @@ protected:
     string tipo;
     SpriteSequence sprite1{ "bin/imagenes/piezas_blancas.png", 6 };
     SpriteSequence sprite2{ "bin/imagenes/piezas_negras.png", 6 };
+    Vector2D max,min;
 public:
     Figura();
     Figura(bool color_, const string &tipo_,int identidad_,bool vida_);
