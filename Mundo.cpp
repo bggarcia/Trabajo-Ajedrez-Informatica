@@ -61,6 +61,18 @@ void Mundo::mueve() {
 
   
 }
+void Mundo::realizarMovimiento()
+{
+	
+		if (lt.getCasillaPos(pos) != nullptr) //Pieza destino distinta de nullptr
+			lt.eliminarPieza(pos);
+		lt.getCasillaPos(pos)->setPieza(lt.getCasillaPos(ident)->getPieza());
+		lt.getCasillaPos(pos)->getPieza()->setPos(pos);
+		lt.getCasillaPos(pos)->getPieza()->setIdent(pos);
+		lt.eliminarPieza(ident); //se pone la pieza del origen en null
+
+		coronardatos(pos); // Si al realizarse el movimiento coronardatos detecta un peón en el final de su recorrido, coronación.
+}
 
 int Mundo::conversion(char id[3] {          //Función que se encarga de convertir la letra de la casilla en la identidad utilizada
   switch (id[0])
