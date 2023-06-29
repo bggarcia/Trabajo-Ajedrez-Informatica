@@ -124,3 +124,30 @@ int Mundo::conversion(char id[3] {          //Función que se encarga de convert
       default: return 99; break;    //Si la letra no es ninguna de la "a" a la "h", retorna 99 para que entre en lt.cumpleLimites() y retorne false
     }
 }
+
+void Mundo::coronardatos(int pos)
+{
+	int coronar;
+	Figura* aux= lt.getCasillaPos(pos)->getPieza();
+	if (lt.getCasillaPos(pos)->getPieza()->coronacion(pos)) ////////////////////////coronacion
+	{
+		cout << "Has coronado el peon, elige a qué tipo de pieza lo quieres convertir: " << endl;
+		do
+		{
+			cout << "(0=REINA) (1=TORRE) (2=CABALLO) (3=ALFIL)" << endl;
+			cin >> coronar;
+		} while (coronar < 0 && coronar > 3);
+
+		lt.eliminarPieza(pos);
+
+		switch (coronar)
+		{
+		case 0: lt.getCasillaPos(pos)->setPieza(new Reina(aux->getColor(), pos)); break;
+		case 1: lt.getCasillaPos(pos)->setPieza(new Torre(aux->getColor(), pos)); break;
+		case 2: lt.getCasillaPos(pos)->setPieza(new Caballo(aux->getColor(), pos)); break;
+		case 3: lt.getCasillaPos(pos)->setPieza(new Alfil(aux->getColor(), pos)); break;
+		default:break;
+		}
+		lt.getCasillaPos(pos)->getPieza()->setPos(pos);
+	}
+}
