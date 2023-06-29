@@ -93,3 +93,16 @@ void Tablero::Dibuja()
             listaa[i]->getPieza()->dibuja();
     }
 }
+
+void Tablero::setIndent() {
+    int cont=0;
+    for (int j = MAX_TABLEROS; j > 0; j--) {
+        for (int i = 1; i <= MAX_TABLEROS; i++) {
+
+            listaa[cont]->identi(i, j);
+            cont++;
+        }
+            
+    }
+}
+
