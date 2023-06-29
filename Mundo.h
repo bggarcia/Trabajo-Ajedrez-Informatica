@@ -25,6 +25,8 @@ public:
         int conversion(char[]); //Se encarga de convertir la posición de la casilla en formato letra-número a la identidad.
         //void detectaCas(Vector2D pos);
 	void coronardatos(int);
+	bool piezaEnMedioJaque(int,int);
+	bool jaque();
 
 };
 
