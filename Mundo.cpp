@@ -196,3 +196,17 @@ void Mundo::introducirCasilla()
 		//Se repite el bucle siempre que en el destino exista una pieza y sea del mismo color o si está fuera de límites.
 	}
 }
+
+Mundo::~Mundo()
+{
+}
+
+void Mundo::tecla(unsigned char key)
+{
+
+}
+
+void Mundo::teclaEspecial(unsigned char key)
+{
+
+}
