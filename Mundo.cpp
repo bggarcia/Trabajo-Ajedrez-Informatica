@@ -151,3 +151,48 @@ void Mundo::coronardatos(int pos)
 		lt.getCasillaPos(pos)->getPieza()->setPos(pos);
 	}
 }
+
+void Mundo::introducirCasilla()
+{
+	char id_o[3], id_d[3];
+	if (turno) {
+		//Si es el turno de blancas
+		//do {
+		do {
+			cout << "Introduzca la casilla de origen:";
+			cin >> id_o;
+			ident = conversion(id_o);
+
+		} while ((lt.getColor(ident) == false && lt.getCasillaPos(ident)->getPieza() != nullptr) || lt.getCasillaPos(ident)->getPieza() == nullptr || lt.cumpleLimites(ident) == false);
+		//Se repite el bucle siempre que el color seleccionado es distinto al turno, la casilla seleccionada esté vacia o si está fuera de límites (casilla no existe)
+
+		do {
+			cout << "Introduzca la casilla que quieres llegar:";
+			cin >> id_d;
+			pos = conversion(id_d);
+
+		} while (((lt.getColor(pos) && lt.getCasillaPos(pos)->getPieza() != nullptr)) || lt.cumpleLimites(ident) == false || pos == ident);
+		
+		//Se repite el bucle siempre que en el destino exista una pieza y sea del mismo color o si está fuera de límites.
+	}
+	else {
+		//Si es el turno de negras
+				//do {
+		do {
+			cout << "Introduzca la casilla de origen:";
+			cin >> id_o;
+			ident = conversion(id_o);
+
+		} while ((lt.getColor(ident) == true && lt.getCasillaPos(ident)->getPieza() != nullptr) || lt.getCasillaPos(ident)->getPieza() == nullptr || lt.cumpleLimites(ident) == false);
+		//Se repite el bucle siempre que el color seleccionado es distinto al turno, la casilla seleccionada esté vacia o si está fuera de límites (casilla no existe)
+
+		do {
+			cout << "Introduzca la casilla que quieres llegar:";
+			cin >> id_d;
+			pos = conversion(id_d);
+
+		} while (((lt.getColor(pos) == false && lt.getCasillaPos(pos)->getPieza() != nullptr)) || lt.cumpleLimites(ident) == false || pos == ident);
+	
+		//Se repite el bucle siempre que en el destino exista una pieza y sea del mismo color o si está fuera de límites.
+	}
+}
