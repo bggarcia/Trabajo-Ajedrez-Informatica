@@ -138,6 +138,8 @@ void Mundo::realizarMovimiento()
 int Mundo::conversion(char id[3] {          //Función que se encarga de convertir la letra de la casilla en la identidad utilizada
   switch (id[0])
     {
+	    if (id[0] > 64 && id[0] < 73)   //conversion mayusculas a minusculas mediante ascii
+		id[0] += 32;
          //Minusculas
       case 'a': return 1*10 + static_cast<int>(id[1]- '0'); break;        //Se utiliza el static_cast<int> para convertir el segundo caracter a un número.
       case 'b': return 2*10 + static_cast<int>(id[1]- '0'); break; 
@@ -147,15 +149,7 @@ int Mundo::conversion(char id[3] {          //Función que se encarga de convert
       case 'f': return 6*10 + static_cast<int>(id[1]- '0'); break; 
       case 'g': return 7*10 + static_cast<int>(id[1]- '0'); break; 
       case 'h': return 8*10 + static_cast<int>(id[1]- '0'); break; 
-	// Mayusculas
-      case 'A': return 1*10 + static_cast<int>(id[1]- '0'); break;      
-      case 'B': return 2*10 + static_cast<int>(id[1]- '0'); break; 
-      case 'C': return 3*10 + static_cast<int>(id[1]- '0'); break; 
-      case 'D': return 4*10 + static_cast<int>(id[1]- '0'); break; 
-      case 'E': return 5*10 + static_cast<int>(id[1]- '0'); break; 
-      case 'F': return 6*10 + static_cast<int>(id[1]- '0'); break; 
-      case 'G': return 7*10 + static_cast<int>(id[1]- '0'); break; 
-      case 'H': return 8*10 + static_cast<int>(id[1]- '0'); break; 
+     
       default: return 99; break;    //Si la letra no es ninguna de la "a" a la "h", retorna 99 para que entre en lt.cumpleLimites() y retorne false
     }
 }
