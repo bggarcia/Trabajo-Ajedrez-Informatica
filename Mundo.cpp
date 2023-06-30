@@ -289,6 +289,16 @@ void Mundo::coronardatos(int pos)
 		lt.getCasillaPos(pos)->getPieza()->setPos(pos);
 	}
 }
+bool Mundo::jaque()
+{
+	
+	int pos_ = 0;
+	int comp=0;
+	int vident;
+	
+	
+	return false;
+}
 
 void Mundo::introducirCasilla()
 {
