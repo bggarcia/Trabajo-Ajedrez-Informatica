@@ -295,7 +295,31 @@ bool Mundo::jaque()
 	int pos_ = 0;
 	int comp=0;
 	int vident;
-	
+	//lt.getCasillaPos(ident)->getPieza()->getName() != "k";
+	//comprabamos con for todos los movlegal de todas las piezas, si el rey esta entr esos mov legal jaque
+	for (int k = 0; k < CAS; k++) {
+		if (lt.getCasillaIndice(k)->getPieza()!=nullptr)
+		{
+			if (lt.getCasillaIndice(k)->getPieza()->getName() == "k" && lt.getCasillaIndice(k)->getPieza()->getColor() == turno)
+			{
+				
+				
+			}
+		}
+		
+	}
+	for (int i = 0; i < CAS; i++) {
+		if (lt.getCasillaIndice(i)->getPieza() != nullptr) {
+			vident = lt.getCasillaIndice(i)->getPieza()->getIdent();
+			if (lt.getCasillaIndice(i)->getPieza()->movLegal(pos_) && lt.getCasillaIndice(i)->getPieza()->getColor() != turno) {
+				if (piezaEnMedioJaque(pos_, vident) == true )
+				{
+					
+				}
+			}
+		}
+
+	}
 	
 	return false;
 }
