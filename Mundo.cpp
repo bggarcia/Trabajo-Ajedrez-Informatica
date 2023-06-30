@@ -303,7 +303,8 @@ bool Mundo::jaque()
 			if (lt.getCasillaIndice(k)->getPieza()->getName() == "k" && lt.getCasillaIndice(k)->getPieza()->getColor() == turno)
 			{
 				
-				
+				pos_ = lt.getCasillaIndice(k)->getPieza()->getIdent();
+				break;
 			}
 		}
 		
@@ -314,7 +315,7 @@ bool Mundo::jaque()
 			if (lt.getCasillaIndice(i)->getPieza()->movLegal(pos_) && lt.getCasillaIndice(i)->getPieza()->getColor() != turno) {
 				if (piezaEnMedioJaque(pos_, vident) == true )
 				{
-					
+					return true;
 				}
 			}
 		}
